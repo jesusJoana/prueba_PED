@@ -1,0 +1,4 @@
+name: entorno-distribuido
+dependencies: 
+- python=3.11
+- pip
