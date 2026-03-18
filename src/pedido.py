@@ -1,5 +1,9 @@
 # src/pedido.py
 
 def calcular_total(productos):
-    producto = productos[0]
-    return producto["precio"] * producto["cantidad"]
+    total = 0
+
+    for producto in productos:
+        total += producto["precio"] * producto["cantidad"]
+
+    return total
