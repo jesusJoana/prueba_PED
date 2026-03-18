@@ -4,6 +4,7 @@ import unittest
 
 from src.pedido import calcular_total
 
+
 class TestPedido(unittest.TestCase):
     def test_un_producto_devuelve_total_correcto(self):
         productos = [
@@ -24,5 +25,15 @@ class TestPedido(unittest.TestCase):
 
         self.assertEqual(total, 35)
 
+    def test_cantidad_cero_lanza_error(self):
+        productos = [
+            {"nombre": "teclado", "precio": 10, "cantidad": 0}
+        ]
+
+        with self.assertRaises(ValueError):
+            calcular_total(productos)
+
+
 if __name__ == "__main__":
     unittest.main()
+
