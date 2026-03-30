@@ -1,3 +1,8 @@
 def calcular_total(productos):
-    producto = productos[0]
-    return producto["precio"] * producto["cantidad"]
+    total = 0
+
+    for producto in productos:
+        subtotal = producto["precio"] * producto["cantidad"]
+        total += subtotal
+
+    return total
